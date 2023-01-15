@@ -1,0 +1,27 @@
+import csv
+
+# Open the input file
+with open('input.txt', 'r') as input_file:
+    # Read the data
+    data = input_file.read()
+
+# Convert the data into a list of rows
+rows = data.split('\n')
+
+# Create a new list to store the single column
+single_column = []
+
+# Iterate over the rows
+for row in rows:
+    # Split the row into columns
+    columns = row.split('\t')
+    # Iterate over the columns
+    for column in columns:
+        # Append the column to the single column list
+        single_column.append(column)
+
+# Open the output file
+with open('output.txt', 'w') as output_file:
+    # Write the single column to the output file
+    for item in single_column:
+        output_file.write("%s\n" % item)
